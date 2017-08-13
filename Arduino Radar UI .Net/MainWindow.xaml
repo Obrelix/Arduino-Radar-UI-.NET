@@ -1,0 +1,63 @@
+﻿<Window x:Class="Arduino_Radar_UI.Net.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Arduino_Radar_UI.Net"
+        mc:Ignorable="d" 
+       Title="Radar UI" Height="680" Width="1120" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged"  >
+
+    <Grid Background="Black" Margin="0,0, 0, 0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="985*"/>
+            <ColumnDefinition Width="55*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="550*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="DrawCanvas"   Background="Black" Width="960" Height="480" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.61" MouseDown="DrawCanvas_MouseDown" Grid.Column="1" Grid.Row="1"/>
+        <Grid  Grid.Row="2" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="150*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="lblAngle" Content="Radar Angle : " Margin="0" VerticalAlignment="Center" Foreground="LightGreen" FontSize="18" FontFamily="Lucida Console" Opacity="0.59" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="1"/>
+            <Label x:Name="lblDistance" Content="Distance : " Margin="0" VerticalAlignment="Center" Foreground="LightGreen" FontSize="18" FontFamily="Lucida Console" Opacity="0.59" HorizontalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="1"/>
+            <Rectangle Margin="0" Stroke="LightGreen" RadiusX="10" RadiusY="10" Opacity="0.5" StrokeThickness="4" Height="48" Grid.Column="3"/>
+            <Rectangle Margin="0" Stroke="LightGreen" RadiusX="10" RadiusY="10" Opacity="0.5" StrokeThickness="4" Height="48" Grid.Column="1"/>
+
+
+        </Grid>
+        <Expander x:Name="expander" Header="Serial Connection" ExpandDirection="Down" HorizontalAlignment="Left"  Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Top"  Foreground="LightGreen" FontSize="16" Margin="0,1" Opacity="1">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="157*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="txtSerialPort" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="COM3" VerticalAlignment="Center" Width="135" Margin="0" FontSize="14" TextAlignment="Center" Grid.Column="1"/>
+                <Label x:Name="lblSerialPort" Content="Serial Port :" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Foreground="#FFFDFDFD" FontSize="14"/>
+                <Label x:Name="lblConnectionStatus" Content="Status :" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Foreground="#FFFDFDFD" FontSize="14" Grid.Row="1"/>
+                <TextBox x:Name="txtConnectionStatus" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="Disconnected" VerticalAlignment="Center" Width="135" Margin="0" Background="#FFFB0A0A" FontSize="14" TextAlignment="Center" Grid.Column="1" BorderBrush="#FFF73206" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label x:Name="lblSerialInput" Content="Serial Input :" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Foreground="#FFFDFDFD" FontSize="14" Grid.Row="2"/>
+                <TextBox x:Name="txtSerialInput" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="Connection N/A" VerticalAlignment="Center" Width="135" Margin="0" FontSize="14" TextAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+                <Button x:Name="btnConnect" Content="Connect" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Margin="0"  FontSize="14" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="1" Click="btnConnect_Click"/>
+
+            </Grid>
+        </Expander>
+    </Grid>
+</Window>

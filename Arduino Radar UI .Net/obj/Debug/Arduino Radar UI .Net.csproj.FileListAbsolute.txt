@@ -1,0 +1,14 @@
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\bin\Debug\Arduino_Radar_UI.Net.exe.config
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\bin\Debug\Arduino_Radar_UI.Net.exe
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\bin\Debug\Arduino_Radar_UI.Net.pdb
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino Radar UI .Net.csprojResolveAssemblyReference.cache
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\MainWindow.g.cs
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\App.g.cs
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net_MarkupCompile.cache
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net_MarkupCompile.lref
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\MainWindow.baml
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.g.resources
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.Properties.Resources.resources
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino Radar UI .Net.csproj.GenerateResource.Cache
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.exe
+c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.pdb
