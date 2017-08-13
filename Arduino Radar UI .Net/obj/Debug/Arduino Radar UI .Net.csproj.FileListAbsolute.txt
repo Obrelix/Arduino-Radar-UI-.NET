@@ -12,3 +12,6 @@ c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Ard
 c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino Radar UI .Net.csproj.GenerateResource.Cache
 c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.exe
 c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.pdb
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\bin\Debug\Arduino_Radar_UI.Net.exe.config
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.exe
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.pdb
