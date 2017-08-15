@@ -4,7 +4,7 @@ A WPF Application that open a connection with the arduino controller and visuali
 
 # Schema
 
-![alt tag](https://raw.githubusercontent.com/Obrelix/Arduino-Radar-UI-.NET/master/Radar%20ScreeShots/schema2.PNG)
+![alt tag](https://raw.githubusercontent.com/Obrelix/Arduino-Radar-UI-.NET/master/Radar%20ScreeShots/schema1.PNG)
 
 
 ![alt tag](https://raw.githubusercontent.com/Obrelix/Arduino-Radar-UI-.NET/master/Radar%20ScreeShots/RadarUI2.PNG)
