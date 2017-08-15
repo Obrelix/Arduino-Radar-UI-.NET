@@ -112,9 +112,7 @@ namespace Arduino_Radar_UI.Net
                 while (true)
                 {
                     this.Dispatcher.Invoke(new AddGraphics(radarCursorAngleChange));
-
-                    if (ArduinoMode) Thread.Sleep(50);
-                    else Thread.Sleep(50);
+                    Thread.Sleep(50);
                 }
             }
             catch (Exception e)
@@ -220,7 +218,7 @@ namespace Arduino_Radar_UI.Net
             if (dist == 0) return;
             double scaleDistance;
             Point p = new Point();
-            scaleDistance = map(0, 0.5, 0, lineLength, dist);
+            scaleDistance = map(0, 0.5, 0, lineLength -30, dist);
             p.X = lineLength + Math.Cos(angle * Math.PI / 180) * scaleDistance;
             p.Y = lineLength - Math.Sin(angle * Math.PI / 180) * scaleDistance;
             Atia atia = new Atia(this, p.X, p.Y);
