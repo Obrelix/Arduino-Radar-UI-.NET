@@ -14,18 +14,18 @@ void setup()
   myServo.attach(servoPin); // Defines on which pin is the servo motor attached
   Serial.begin(9600); //Begin a sirial communication
   distance = 0; duration = 0;
-  Angle = 0; turnLeft = 1;
+  Angle = 10; turnLeft = 1;
 }
 
 void loop() 
 {
   if (Angle < 170 && turnLeft) Angle ++;
-  else if (Angle >= 170 || !turnLeft) { turnLeft = (Angle <= 10); Angle--; }
+  else if (Angle >= 170 || !turnLeft) { turnLeft = (Angle <= 11); Angle--; }
   myServo.write(Angle);
   distance = calculateDistance();
   outputString = String(Angle) + "," + String(distance) + ".\n";
   Serial.print(outputString);
-  delay(25);
+  delay(50);
 }
 
 long calculateDistance()

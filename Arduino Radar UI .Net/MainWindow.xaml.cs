@@ -95,7 +95,7 @@ namespace Arduino_Radar_UI.Net
                         txtSerialInput.Dispatcher.Invoke(new connectionParser(display_input), "Connection N/A");
                         txtConnectionStatus.Dispatcher.Invoke(new connectionParser(display_status), "Disconnected");
                     }
-                    Thread.Sleep(10);
+                    Thread.Sleep(25);
                     ArduinoMode = (arduinoPort.IsOpen);
                 }
                 catch (Exception)
@@ -113,8 +113,8 @@ namespace Arduino_Radar_UI.Net
                 {
                     this.Dispatcher.Invoke(new AddGraphics(radarCursorAngleChange));
 
-                    if (ArduinoMode) Thread.Sleep(25);
-                    else Thread.Sleep(40);
+                    if (ArduinoMode) Thread.Sleep(50);
+                    else Thread.Sleep(50);
                 }
             }
             catch (Exception e)
@@ -183,7 +183,7 @@ namespace Arduino_Radar_UI.Net
                     if (radarAngle < 180 && turnLeft) radarAngle++;
                     else if (radarAngle >= 180 || !turnLeft)
                     {
-                        turnLeft = (radarAngle <= 0);
+                        turnLeft = (radarAngle <= 1);
                         radarAngle--;
                     }
                     break;
@@ -204,9 +204,9 @@ namespace Arduino_Radar_UI.Net
                         this.DrawCanvas.Children.Remove(radarRadius[i]);
                     }
 
-                    radarRadius[i].Opacity = 0.6 - 0.025 * i;
-                    radarRadius[i].X2 = lineLength + Math.Cos(angleList[i] * Math.PI / 180) * (lineLength - 20);
-                    radarRadius[i].Y2 = lineLength - Math.Sin(angleList[i] * Math.PI / 180) * (lineLength - 20);
+                    radarRadius[i].Opacity = 0.7 - 0.02 * i;
+                    radarRadius[i].X2 = lineLength + Math.Cos(angleList[i] * Math.PI / 180) * (lineLength - 30);
+                    radarRadius[i].Y2 = lineLength - Math.Sin(angleList[i] * Math.PI / 180) * (lineLength - 30);
 
                     this.DrawCanvas.Children.Add(radarRadius[i]);
                 }
@@ -217,9 +217,10 @@ namespace Arduino_Radar_UI.Net
 
         private void printAtia(double dist, int angle)
         {
+            if (dist == 0) return;
             double scaleDistance;
             Point p = new Point();
-            scaleDistance = map(0, 1, 0, lineLength, dist);
+            scaleDistance = map(0, 0.5, 0, lineLength, dist);
             p.X = lineLength + Math.Cos(angle * Math.PI / 180) * scaleDistance;
             p.Y = lineLength - Math.Sin(angle * Math.PI / 180) * scaleDistance;
             Atia atia = new Atia(this, p.X, p.Y);
@@ -273,7 +274,7 @@ namespace Arduino_Radar_UI.Net
         {
             double dblArcSizeDiv = lineLength / 10;
             double actualAngle = 0, outerArcRadius = lineLength + 2;
-            int intDistanceCounter = 100, intLblCounter = 0;
+            int intDistanceCounter = 50, intLblCounter = 0;
             PathFigure ArcFigure = new PathFigure();
 
             if (DrawCanvas.ActualHeight > 0)
@@ -295,6 +296,13 @@ namespace Arduino_Radar_UI.Net
                     {
                         staticLineList[i].X1 = DrawCanvas.ActualWidth / 2;
                         staticLineList[i].Y1 = DrawCanvas.ActualHeight;
+                        staticLineList[i].StrokeThickness = 2;
+                        staticLineList[i].Opacity = 0.5;
+                    }
+                    else if (i % 5 == 0)
+                    {
+                        staticLineList[i].X1 = lineLength + Math.Cos(actualAngle * Math.PI / 180) * (lineLength - 30);
+                        staticLineList[i].Y1 = lineLength - Math.Sin(actualAngle * Math.PI / 180) * (lineLength - 30);
                         staticLineList[i].StrokeThickness = 2;
                         staticLineList[i].Opacity = 0.5;
                     }
@@ -345,11 +353,11 @@ namespace Arduino_Radar_UI.Net
                 {
                     ArcFigure = new PathFigure();
                     dblArcSizeDiv = (lineLength) / 10 * i;
-                    ArcFigure.StartPoint = new Point((DrawCanvas.ActualWidth - dblArcSizeDiv - 20), DrawCanvas.ActualHeight);
+                    ArcFigure.StartPoint = new Point((DrawCanvas.ActualWidth - dblArcSizeDiv - 30), DrawCanvas.ActualHeight);
                     ArcFigure.Segments.Add(
                         new ArcSegment(
-                            new Point(dblArcSizeDiv + 20, lineLength),
-                                new Size((lineLength - dblArcSizeDiv - 20), (lineLength - dblArcSizeDiv - 20)),
+                            new Point(dblArcSizeDiv + 30, lineLength),
+                                new Size((lineLength - dblArcSizeDiv - 30), (lineLength - dblArcSizeDiv - 30)),
                                 90,
                                 false,
                                 SweepDirection.Counterclockwise,
@@ -380,8 +388,8 @@ namespace Arduino_Radar_UI.Net
                     lblDistanceList[19 - i].Content = intDistanceCounter.ToString() + " cm";
                     lblDistanceList[19 - i].Foreground = new SolidColorBrush(Colors.White);
                     lblDistanceList[19 - i].Background = new SolidColorBrush(Colors.Black);
-                    lblDistanceList[19 - i].Margin = new Thickness(dblArcSizeDiv, lineLength, 0, 0);
-                    intDistanceCounter -= 10;
+                    lblDistanceList[19 - i].Margin = new Thickness(dblArcSizeDiv+10, lineLength, 0, 0);
+                    intDistanceCounter -= 5;
 
                 }
             }
@@ -434,7 +442,7 @@ namespace Arduino_Radar_UI.Net
                 {
                     drawRadarRadius();
                     printAtiaIfColizionExist();
-                    if (distance < 0.9 && ArduinoMode) printAtia(distance, radarAngle);
+                    if (distance < 0.5 && ArduinoMode) printAtia(distance, radarAngle);
                 }
             }
         }

@@ -18,9 +18,8 @@ namespace Arduino_Radar_UI.Net
         private delegate void AddPicture();
 
         private Thread targetRunner;
-        public bool isEnded;
+        public bool visible;
         private MainWindow window;
-        private int clockCounter, lifeTime;
         private double locationX, locationY;
         public int score = 0;
         Ellipse atia = new Ellipse();
@@ -31,13 +30,11 @@ namespace Arduino_Radar_UI.Net
 
         public Atia(MainWindow window, double locX, double locY)
         {
-            lifeTime = 200;
-            isEnded = false;
             this.window = window;
             //get 2 realy random number for x,y
             locationX = locX;
             locationY = locY;
-            clockCounter = 0;
+            visible = true;
             //Run();
         }
 
@@ -52,9 +49,9 @@ namespace Arduino_Radar_UI.Net
             atia.Visibility = Visibility.Visible;
             atia.Stroke = Brushes.OrangeRed;
             atia.Fill = Brushes.OrangeRed;
-            atia.StrokeThickness = 5;
-            atia.Height = 5;
-            atia.Width = 5;
+            atia.StrokeThickness =4.5;
+            atia.Height = 4.5;
+            atia.Width = 4.5;
             atia.Margin = new Thickness((locationX - (atia.Width / 2)),
                 (locationY - (atia.Height / 2)), locationX + atia.Width - (atia.Width / 2),
                 (locationY + atia.Height - (atia.Height / 2)));
@@ -64,34 +61,41 @@ namespace Arduino_Radar_UI.Net
 
         private void removeAtia()
         {
-            atia.Opacity = 0;
             if (atia != null) window.DrawCanvas.Children.Remove(atia);
-            atia = null;
+            //atia = null;
         }
 
         private void AtiaSizeChange()
         {
-            if (atia != null)
+            try
             {
-                atia.Width += 1;
-                atia.Height += 1;
-                atia.Margin = new Thickness(
-                    (locationX - (atia.Width / 2)),
-                     (locationY - (atia.Height / 2)),
-                      (locationX + atia.Width + (atia.Width / 2)),
-                       (locationY + atia.Height + (atia.Height / 2)));
-                atia.Opacity -= 0.01;
-
+                if (atia != null)
+                {
+                    atia.Width += 0.75;
+                    atia.Height += 0.75;
+                    atia.Margin = new Thickness(
+                        (locationX - (atia.Width / 2)),
+                            (locationY - (atia.Height / 2)),
+                            (locationX + atia.Width + (atia.Width / 2)),
+                            (locationY + atia.Height + (atia.Height / 2)));
+                    atia.Opacity -= 0.01;
+                    visible = (atia.Opacity >= 0.01);
+                }
             }
+            catch (Exception)
+            {
+                
+            }
+            
         }
 
         private bool clockEnded()
         {
-            if (clockCounter > lifeTime)
+            if (!visible)
             {
                 window.Dispatcher.Invoke(new AddPicture(removeAtia));
             }
-            return (clockCounter > lifeTime);
+            return (!visible);
         }
 
         #endregion
@@ -119,9 +123,8 @@ namespace Arduino_Radar_UI.Net
             {
                 while (!clockEnded())
                 {
-                    clockCounter++;
                     window.Dispatcher.Invoke(new AddPicture(AtiaSizeChange));
-                    Thread.Sleep(80);
+                    Thread.Sleep(90);
                 }
             }
             catch (Exception e)
