@@ -22,6 +22,7 @@
         </Grid.RowDefinitions>
         <Canvas x:Name="DrawCanvas"   Background="Black" Width="960" Height="480" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.61" MouseDown="DrawCanvas_MouseDown" Grid.Column="1" Grid.Row="1"/>
         <Grid  Grid.Row="2" Grid.Column="1" >
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150*"/>
                 <ColumnDefinition Width="300*"/>

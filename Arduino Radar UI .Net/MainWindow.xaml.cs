@@ -205,8 +205,8 @@ namespace Arduino_Radar_UI.Net
                     }
 
                     radarRadius[i].Opacity = 0.6 - 0.025 * i;
-                    radarRadius[i].X2 = lineLength + Math.Cos(angleList[i] * Math.PI / 180) * lineLength;
-                    radarRadius[i].Y2 = lineLength - Math.Sin(angleList[i] * Math.PI / 180) * lineLength;
+                    radarRadius[i].X2 = lineLength + Math.Cos(angleList[i] * Math.PI / 180) * (lineLength - 20);
+                    radarRadius[i].Y2 = lineLength - Math.Sin(angleList[i] * Math.PI / 180) * (lineLength - 20);
 
                     this.DrawCanvas.Children.Add(radarRadius[i]);
                 }
@@ -263,8 +263,8 @@ namespace Arduino_Radar_UI.Net
                 radarRadius[i].Stroke = Brushes.LimeGreen;
                 radarRadius[i].X1 = DrawCanvas.ActualWidth / 2;
                 radarRadius[i].Y1 = DrawCanvas.ActualHeight;
-                radarRadius[i].X2 = lineLength + Math.Cos(radarAngle * Math.PI / 180) * lineLength;
-                radarRadius[i].Y2 = lineLength - Math.Sin(radarAngle * Math.PI / 180) * lineLength;
+                radarRadius[i].X2 = lineLength + Math.Cos(radarAngle * Math.PI / 180) * (lineLength - 20);
+                radarRadius[i].Y2 = lineLength - Math.Sin(radarAngle * Math.PI / 180) * (lineLength - 20);
                 angleList.Add(0);
             }
         }
@@ -288,24 +288,24 @@ namespace Arduino_Radar_UI.Net
                     {
                         staticLineList[i].StrokeThickness = 5;
                         staticLineList[i].Opacity = 0.7;
+                        staticLineList[i].X1 = DrawCanvas.ActualWidth / 2;
+                        staticLineList[i].Y1 = DrawCanvas.ActualHeight;
                     }
                     else if (i % 10 == 0)
                     {
+                        staticLineList[i].X1 = DrawCanvas.ActualWidth / 2;
+                        staticLineList[i].Y1 = DrawCanvas.ActualHeight;
                         staticLineList[i].StrokeThickness = 2;
                         staticLineList[i].Opacity = 0.5;
                     }
                     else
                     {
+                        staticLineList[i].X1 = lineLength + Math.Cos(actualAngle * Math.PI / 180) * (lineLength - 20);
+                        staticLineList[i].Y1 = lineLength - Math.Sin(actualAngle * Math.PI / 180) * (lineLength - 20);
                         staticLineList[i].StrokeThickness = 1;
-                        staticLineList[i].Opacity = 0.3;
+                        staticLineList[i].Opacity = 0.5;
                     }
                     staticLineList[i].Stroke = Brushes.LightGreen;
-                    //staticLineList[i].X1 = (i == 0 || i == 90 || i == 180) ? DrawCanvas.ActualWidth / 2 :
-                    //     outerArcRadius + Math.Cos(actualAngle * Math.PI / 180) * outerArcRadius;
-                    //staticLineList[i].Y1 = (i == 0 || i == 90 || i == 180) ? DrawCanvas.ActualHeight :
-                    //     outerArcRadius - Math.Sin(actualAngle * Math.PI / 180) * outerArcRadius;
-                    staticLineList[i].X1 = DrawCanvas.ActualWidth / 2;
-                    staticLineList[i].Y1 = DrawCanvas.ActualHeight;
                     staticLineList[i].X2 = lineLength + Math.Cos(actualAngle * Math.PI / 180) * lineLength;
                     staticLineList[i].Y2 = lineLength - Math.Sin(actualAngle * Math.PI / 180) * lineLength;
                     if (i % 10 == 0)

@@ -15,3 +15,14 @@ c:\users\obrelix\documents\visual studio 2015\Projects\Arduino Radar UI .Net\Ard
 C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\bin\Debug\Arduino_Radar_UI.Net.exe.config
 C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.exe
 C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.pdb
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\bin\Debug\Arduino_Radar_UI.Net.exe
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\bin\Debug\Arduino_Radar_UI.Net.pdb
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino Radar UI .Net.csprojResolveAssemblyReference.cache
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\MainWindow.g.cs
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\App.g.cs
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net_MarkupCompile.cache
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net_MarkupCompile.lref
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\MainWindow.baml
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.g.resources
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino_Radar_UI.Net.Properties.Resources.resources
+C:\Users\Obrelix\Source\Repos\Arduino-Radar-UI-.NET\Arduino Radar UI .Net\obj\Debug\Arduino Radar UI .Net.csproj.GenerateResource.Cache
